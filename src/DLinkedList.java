@@ -20,8 +20,8 @@ public class DLinkedList<T> {
 		return size;
 	}
 	/**
-	* Verifica se a lista está vazia
-	* @return true se estiver vazia. Caso contrário, false
+	* Verifica se a lista estÃ¡ vazia
+	* @return true se estiver vazia. Caso contrÃ¡rio, false
 	*/
 	public boolean isEmpty() {
 		return size == 0;
@@ -34,7 +34,6 @@ public class DLinkedList<T> {
 		head = null;
 		tail = null;
 	}
-	
 	/**
 	* Retorna o primeiro elemento da lista
 	* @return O primeiro elemento da lista
@@ -45,8 +44,8 @@ public class DLinkedList<T> {
 		return head.getValue();
 	}
 	/**
-	* Retorna o último elemento da lista.
-	* @return O último elemento da lista
+	* Retorna o Ãºltimo elemento da lista.
+	* @return O Ãºltimo elemento da lista
 	* @throws NoSuchElementException Se a lista estiver vazia
 	*/
 	public T getLast() {
@@ -54,7 +53,7 @@ public class DLinkedList<T> {
 		return tail.getValue();
 	}
 	/**
-	* Adiciona um elemento na cabeça da lista
+	* Adiciona um elemento na cabeÃ§a da lista
 	* @param value
 	*/
 	public void addFirst(T value) {
@@ -67,7 +66,6 @@ public class DLinkedList<T> {
 		head = first;
 		size++;
 	}
-	
 	/**
 	* Adiciona um elemento na cauda da lista
 	* @param value
@@ -79,7 +77,7 @@ public class DLinkedList<T> {
 			Node<T> last = new Node<T>();
 			last.setValue(value);
 			tail.setNext(last);
-			last.setPrevious(tail); //inclui o "último atual" como antecessor
+			last.setPrevious(tail);
 			tail = last;
 			size++;
 		}
@@ -113,19 +111,16 @@ public class DLinkedList<T> {
 		}
 
 		temp.setNext(null);
-		//remove a referencia do anterior para o próximo
 		tail.setPrevious(null);
-		// Penultimo elemento, se torna o ultimo elemento
 		tail = temp;
-		tail.setNext(null); // ultimo elemento aponta para nulo
+		tail.setNext(null);
 		size--;
 		return value;
 	}
-
 	/**
-	* Verifica se a lista contém o valor
+	* Verifica se a lista contÃ©m o valor
 	* @param value
-	* @return true se o elemento estiver na lista. caso contrário, false
+	* @return true se o elemento estiver na lista. caso contrÃ¡rio, false
 	*/
 	public boolean contains(T value) {
 		Node<T> temp = head;
@@ -137,7 +132,6 @@ public class DLinkedList<T> {
 		}
 		return false;
 	}
-
 	
 	/**
 	* Retorna uma lista de objetos com todos os elementos da lista
@@ -152,9 +146,8 @@ public class DLinkedList<T> {
 		}
 		return array;
 	}
-	
 	/**
-	 * Retorna o elemento da posiçao index
+	 * Retorna o elemento da posiÃ§ao index
 	 * @param index
 	 * @return elemento da posicao index
 	 * @throws IndexOutOfBoundsException
@@ -167,9 +160,8 @@ public class DLinkedList<T> {
 		}
 		return temp.getValue();
 	}
-	
 	/**
-	 * Remove o elemento da posiçao index e remove da lista
+	 * Remove o elemento da posiÃ§ao index e remove da lista
 	 * @param index
 	 * @return elemento da posicao index
 	 * @throws IndexOutOfBoundsException (index >= size  || index < 0)
@@ -193,7 +185,6 @@ public class DLinkedList<T> {
 		size--;
 		return temp.getValue();
 	}
-	
 	/**
 	 * Adiciona um novo elemento na posicao index
 	 * @param index
@@ -222,9 +213,8 @@ public class DLinkedList<T> {
 		}
 		size++;
 	}
-	
 	/**
-	 * Atualiza o elemento da posiçao index
+	 * Atualiza o elemento da posiÃ§ao index
 	 * @param index
 	 * @throws IndexOutOfBoundsException
 	 */
@@ -236,7 +226,4 @@ public class DLinkedList<T> {
 		}
 		temp.setValue(value);
 	}
-	
-
-
 }
